@@ -15,11 +15,17 @@ int main()
   cout << "Please input the height of the bridge in meters:";
   cin >> height;
 
+  cout << "Time Falling (seconds) Distance Fallen (meters)\n";
+  cout << "***********************************************\n";
+  
   for (int  i = 0; i <= fallTime; i++) {
     distanceFallen = (i * i) * DISTANCE_FACTOR;
 
     cout << fixed << showpoint << setprecision(2);
-    cout << i << " " << distanceFallen << endl; 
+    cout << i << " " << distanceFallen << endl;
+
+    if (distanceFallen > height)
+      cout << "Warning-Bad Data: The distance fallen exceeds the height of the bridge";
   }
   return 0;
 }
